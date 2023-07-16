@@ -338,10 +338,10 @@
       transition: color .3s;
     }
     #cs-navigation .cs-li-link:hover {
-      color: blue;
+      color: #4184d3;
     }
     #cs-navigation .cs-li-link.cs-active {
-      color: blue;
+      color: #fff;
     }
     #cs-navigation .cs-button-solid {
       font-size: 1rem;
@@ -354,7 +354,7 @@
       color: #fff;
       min-width: 9.375rem;
       padding: 0 2rem;
-      background-color: blue;
+      background-color: #4184d3;
       display: inline-block;
       position: relative;
       z-index: 1;
@@ -510,7 +510,7 @@
       margin: 0;
       color: #fff;
       padding: 0;
-      background-color: blue;
+      background-color: #4184d3;
       display: inline-block;
       position: relative;
       z-index: 1;
@@ -751,7 +751,7 @@
     color: #fff;
     min-width: 9.375rem;
     padding: 0 1.5rem;
-    background-color: var(--primary);
+    background-color: #4184d3;
     border-radius: 0.25rem;
     display: inline-block;
     position: relative;
@@ -1103,7 +1103,7 @@
     text-align: inherit;
     letter-spacing: .1em;
     font-weight: 700;
-    color: var(--primary);
+    color: #4184d3;
     margin-bottom: 0.25rem;
     display: block;
   }
@@ -1265,7 +1265,7 @@
     text-align: inherit;
     letter-spacing: .1em;
     font-weight: 700;
-    color: var(--primary);
+    color: #4184d3;
     margin-bottom: 0.25rem;
     display: block;
   }
@@ -1321,7 +1321,7 @@
     transform: scale(1.2);
   }
   #services-1081 .cs-item:hover .cs-h3 {
-    background-color: var(--primary);
+    background-color: #4184d3;
   }
   #services-1081 .cs-picture {
     width: 100%;
@@ -1507,7 +1507,7 @@
     transition: transform 0.3s, background-color 0.3s;
   }
   #cs-footer-840 .cs-social-link:hover {
-    background-color: var(--primaryLight);
+    background-color: #4184d3;
     transform: translateY(-0.1875rem);
   }
   #cs-footer-840 .cs-social-link:hover .cs-social-img {
@@ -1560,7 +1560,7 @@
     transition: color .3s;
   }
   #cs-footer-840 .cs-link:hover {
-    color: var(--primaryLight);
+    color: #4184d3;
   }
   #cs-footer-840 .cs-icon {
     width: 1.25rem;
@@ -1610,7 +1610,7 @@
     position: relative;
   }
   #cs-footer-840 .cs-credit-link:hover {
-    color: var(--primary);
+    color: #4184d3;
   }
   #cs-footer-840 .cs-bottom-links {
     width: 100%;
