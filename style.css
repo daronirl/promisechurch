@@ -95,7 +95,7 @@
       height: 3.5rem;
       margin: 0 0 0 auto;
       border-radius: 0.25rem;
-      background-color: var(--primary);
+      background-color: #4184d3;
       border: none;
       display: flex;
       justify-content: center;
@@ -235,15 +235,15 @@
       line-height: 1.2em;
       text-decoration: none;
       margin: 0;
-      color: var(--headerColor);
+      color: #4184d3;
       display: inline-block;
       position: relative;
     }
     #cs-navigation .cs-li-link.cs-active {
-      color: var(--primary);
+      color: #4184d3;
     }
     #cs-navigation .cs-li-link:hover {
-      color: var(--primary);
+      color: #000;
     }
     #cs-navigation .cs-button-solid {
       display: none;
