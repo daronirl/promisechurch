@@ -16,9 +16,7 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
-  body {
-    font-family: 'Roboto', 'Arial', sans-serif;
-  }
+
   .cs-topper {
     font-size: var(--topperFontSize);
     line-height: 1.2em;
