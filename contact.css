@@ -1,0 +1,851 @@
+/* remove the :root, body font family, cs-topper, cs-title, cs-text, and cs-button-solid and place them in your global stylesheet.  That way they will style EVERY instance of these elements on your site and make edits a lot faster and easier.  This also helps us to not repeat ourselves. All these styles are exactly the same for every stitch in the library, so instead of repeating them on every single stitch and having to edit every single one to change them, we extract them from the css and add them to the global stylesheet to be loaded on every page in the site. */
+:root {
+  /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+  --primary: #042925;
+  --primaryLight: #EDB86F;
+  --secondary: #A36814;
+  --secondaryLight: #FFBA43;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #4E4B66;
+  --bodyTextColorWhite: #FAFBFC;
+  /* 13px - 16px */
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  /* 31px - 49px */
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --bodyFontSize: 1rem;
+  /* 60px - 100px top and bottom */
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+.cs-topper {
+  font-size: var(--topperFontSize);
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: inherit;
+  letter-spacing: .1em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.cs-title {
+  font-size: var(--headerFontSize);
+  font-weight: 900;
+  line-height: 1.2em;
+  text-align: inherit;
+  max-width: 43.75rem;
+  margin: 0 0 1rem 0;
+  color: var(--headerColor);
+  position: relative;
+}
+.cs-text {
+  font-size: var(--bodyFontSize);
+  line-height: 1.5em;
+  text-align: inherit;
+  width: 100%;
+  max-width: 40.625rem;
+  margin: 0;
+  color: var(--bodyTextColor);
+}
+body.dark-mode .cs-button-solid {
+  background-color: var(--secondaryLight);
+  color: #1a1a1a;
+}
+body.dark-mode .cs-button-solid:before {
+  background-color: #fff;
+}
+.cs-button-solid {
+  font-size: 1rem;
+  /* 46px - 56px */
+  line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  min-width: 9.375rem;
+  padding: 0 1.5rem;
+  background-color: var(--primary);
+  border-radius: 0.25rem;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  /* prevents padding from adding to the width */
+  box-sizing: border-box;
+}
+.cs-button-solid:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: #000;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 0.25rem;
+  transition: width .3s;
+}
+.cs-button-solid:hover:before {
+  width: 100%;
+}
+/* ^^^ remove everything above this comment and place in global stylesheet ^^^ */
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #ContactBanner-327 {
+    /* 144px - 252px */
+    padding-top: clamp(9rem, 25vw, 15.75rem);
+    /* 80px - 140px */
+    padding-bottom: clamp(5rem, 13vw, 8.75rem);
+    position: relative;
+    z-index: 1;
+  }
+  #ContactBanner-327 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #ContactBanner-327 .cs-int-title {
+    /* 39px - 49px */
+    font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 43.75rem;
+    margin: 0 auto 0.75rem;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #ContactBanner-327 .cs-breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ContactBanner-327 .cs-link {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    text-decoration: none;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ContactBanner-327 .cs-link:last-of-type::after {
+    display: none;
+  }
+  #ContactBanner-327 .cs-link:after {
+    /* chevron - added as pseudo to make adding and removing them easier */
+    content: '';
+    width: 0.4375rem;
+    height: 0.75rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    background: url("https://csimg.nyc3.digitaloceanspaces.com/Banners/chevron-right.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #ContactBanner-327 .cs-link.cs-active {
+    color: var(--primaryLight);
+  }
+  #ContactBanner-327 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+  }
+  #ContactBanner-327 .cs-background:before {
+    /* black overlay box */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .72;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #ContactBanner-327 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #ContactForm-327 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+  }
+  #ContactForm-327 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 36.25rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3.25rem;
+  }
+  #ContactForm-327 .cs-content {
+    text-align: left;
+  }
+  #ContactForm-327 .cs-text {
+    /* 24px - 32px */
+    margin-bottom: clamp(1.5rem, 5vw, 2rem);
+  }
+  #ContactForm-327 .cs-form {
+    /* 20px - 48px top and bottom */
+    /* 20px - 32px left and right */
+    padding: clamp(1.25rem, 4.18vw, 3rem) clamp(1.25rem, 4.18vw, 2rem);
+    background-color: #F7F7F7;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  #ContactForm-327 .cs-label {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  #ContactForm-327 .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0;
+    padding-left: 1.5rem;
+    border-radius: 0.5rem;
+    color: var(--headerColor);
+    background-color: #fff;
+    border: none;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+  }
+  #ContactForm-327 .cs-input::placeholder {
+    color: #7D799C;
+    opacity: .6;
+  }
+  #ContactForm-327 .cs-textarea {
+    min-height: 7.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-family: inherit;
+  }
+  #ContactForm-327 .cs-submit {
+    text-transform: uppercase;
+    width: 17.6875rem;
+    background-color: var(--secondaryLight);
+    color: var(--headerColor);
+    border: none;
+    transition: color .3s;
+  }
+  #ContactForm-327 .cs-submit:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+  #ContactForm-327 .cs-map {
+    width: 100%;
+    max-width: 39.375rem;
+    /* 328px - 425px */
+    height: clamp(20.5rem, 63.4vw, 26.5625rem);
+    border-radius: 1.5rem;
+    /* clips the corners of the img tag */
+    overflow: hidden;
+    position: relative;
+    display: block;
+  }
+  #ContactForm-327 .cs-map img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #ContactForm-327 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.25rem;
+  }
+  #ContactForm-327 .cs-content {
+    max-width: 35.4375rem;
+  }
+  #ContactForm-327 .cs-title,
+  #ContactForm-327 .cs-topper,
+  #ContactForm-327 .cs-text {
+    text-align: left;
+    margin-left: 0;
+  }
+  #ContactForm-327 .cs-title {
+    max-width: 32.625rem;
+  }
+  #ContactForm-327 .cs-email,
+  #ContactForm-327 .cs-phone {
+    width: 47%;
+  }
+  #ContactForm-327 .cs-button-solid {
+    margin-left: 0;
+  }
+  #ContactForm-327 .cs-map {
+    height: auto;
+    aspect-ratio: 0.89871612;
+  }
+}
+
+/*-- -------------------------- -->
+<---       Contact Strip        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #ContactStrip-327 {
+    padding: var(--sectionPadding);
+    background-color: #F7F7F7;
+  }
+  #ContactStrip-327 .cs-stat-group {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 37.5rem;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  #ContactStrip-327 .cs-item {
+    list-style: none;
+    width: 18.125rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #ContactStrip-327 .cs-item:hover .cs-picture {
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transform: scale(1.05);
+  }
+  #ContactStrip-327 .cs-picture {
+    width: 5rem;
+    height: 5rem;
+    /* 12px - 20px */
+    margin-right: clamp(0.75rem, 3vw, 1.25rem);
+    border-radius: 50%;
+    border: 1px solid #BABABA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.6s;
+  }
+  #ContactStrip-327 .cs-flex-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #ContactStrip-327 .cs-icon {
+    width: 1.75rem;
+    height: auto;
+  }
+  #ContactStrip-327 .cs-header {
+    font-size: 1.25rem;
+    color: var(--headerColor);
+    font-weight: 900;
+    line-height: 1.2em;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  #ContactStrip-327 .cs-link,
+  #ContactStrip-327 .cs-hours {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-decoration: none;
+    color: #767676;
+    display: block;
+  }
+  #ContactStrip-327 .cs-link:hover {
+    text-decoration: underline;
+  }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #ContactStrip-327 .cs-stat-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+    row-gap: 2rem;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #ContactStrip-327 .cs-stat-group {
+    max-width: 80rem;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+}
+
+
+  
+
+
+
+
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #001F3F;
+      --primaryLight: #EDB86F;
+      --secondary: #FFBA43;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #banner-310 {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      /* 144px - 252px */
+      padding-top: clamp(9rem, 25vw, 15.75rem);
+      /* 80px - 140px */
+      padding-bottom: clamp(5rem, 13vw, 8.75rem);
+      position: relative;
+      z-index: 1;
+    }
+    #banner-310 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #banner-310 .cs-int-title {
+      /* 39px - 49px */
+      font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: center;
+      max-width: 43.75rem;
+      margin: 0 auto 0.75rem;
+      color: var(--bodyTextColorWhite);
+      position: relative;
+    }
+    #banner-310 .cs-breadcrumbs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #banner-310 .cs-link {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.2em;
+      text-decoration: none;
+      color: var(--bodyTextColorWhite);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #banner-310 .cs-link:last-of-type::after {
+      display: none;
+    }
+    #banner-310 .cs-link:after {
+      /* chevron - added as pseudo to make adding and removing them easier */
+      content: '';
+      width: 0.4375rem;
+      height: 0.75rem;
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      background: url("https://csimg.nyc3.digitaloceanspaces.com/Banners/chevron-right.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    #banner-310 .cs-link.cs-active {
+      color:#4184d3;
+    }
+    #banner-310 .cs-background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: -1;
+    }
+    #banner-310 .cs-background:before {
+      /* black overlay box */
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .72;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    #banner-310 .cs-background img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+           
+
+
+
+
+
+
+
+
+
+
+
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #008079;
+      --primaryLight: #4db0ab;
+      --secondary: #D98900;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #contact-568 {
+      /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+      font-family: 'Roboto', 'Arial', sans-serif;
+      padding: var(--sectionPadding);
+      background-color: #FAFBFC;
+      position: relative;
+      z-index: 1;
+    }
+    #contact-568 .cs-container {
+      width: 100%;
+      /* changes to 1064px at desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* changes to 20px at desktop */
+      gap: 3rem;
+    }
+    #contact-568 .cs-left {
+      max-width: 39.375rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+    #contact-568 .cs-content {
+      /* set text aling to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+    }
+    #contact-568 .cs-topper {
+      font-size: var(--topperFontSize);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: .1em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    #contact-568 .cs-title {
+      font-size: var(--headerFontSize);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: inherit;
+      /* changes to 522px on desktop */
+      max-width: 23.875rem;
+      margin: 0 0 1rem 0;
+      color: var(--headerColor);
+      position: relative;
+    }
+    #contact-568 .cs-text {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5rem;
+      text-align: inherit;
+      width: 100%;
+      max-width: 26.25rem;
+      margin: 0;
+      color: var(--bodyTextColor);
+    }
+    #contact-568 .cs-form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    #contact-568 .cs-label {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      width: 100%;
+      color: var(--headerColor);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    #contact-568 .cs-input {
+      font-size: 1rem;
+      width: 100%;
+      height: 3.5rem;
+      padding: 0;
+      padding-left: 1.5rem;
+      color: var(--headerColor);
+      background-color: #fff;
+      border: 1px solid #E0E0E0;
+      /* prevents padding from adding to height and width */
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    #contact-568 .cs-input:hover {
+      border-color:#4184d3;
+    }
+    #contact-568 .cs-input:focus {
+      outline: 1px solid var(--secondary);
+    }
+    #contact-568 .cs-input::placeholder {
+      color: #7D799C;
+      opacity: .6;
+    }
+    #contact-568 .cs-textarea {
+      /* 120px - 192px */
+      min-height: clamp(7.5rem, 28vw, 12rem);
+      padding-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-family: inherit;
+    }
+    #contact-568 .cs-submit {
+      font-size: 1rem;
+      text-transform: uppercase;
+      line-height: 3.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 0 1.5rem;
+      background-color: #4184d3;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+      transition: color .3s;
+    }
+    #contact-568 .cs-submit:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width .3s;
+    }
+    #contact-568 .cs-submit:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+    #contact-568 .cs-submit:hover:before {
+      width: 100%;
+    }
+    #contact-568 .cs-right {
+      width: 100%;
+      /* 36px - 72px top & bottom */
+      /* 44px - 60px left & right */
+      padding: clamp(2.25rem, 5.8vw, 4.5rem) clamp(2.75rem, 5.8vw, 3.75rem);
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      background-color: #F1F1F4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #contact-568 .cs-header {
+      /* 13px - 16px */
+      font-size: clamp(0.8125rem, 1.5vw, 1rem);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      color: #4184d3;
+      display: block;
+    }
+    #contact-568 .cs-link {
+      /* 16px - 20px */
+      font-size: clamp(1rem, 1.9vw, 1.25rem);
+      line-height: 1.5em;
+      font-weight: 700;
+      text-decoration: none;
+      /* 24px - 32px */
+      margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+      color: var(--headerColor);
+      display: block;
+    }
+    #contact-568 .cs-link:hover {
+      text-decoration: underline;
+    }
+    #contact-568 .cs-phone {
+      /* 56px - 96px */
+      margin-bottom: clamp(3.5rem, 7vw, 6rem);
+    }
+    #contact-568 .cs-social {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      /* 24px - 30px */
+      gap: clamp(1.5rem, 3vw, 1.875rem);
+    }
+    #contact-568 .cs-li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #contact-568 .cs-social-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 42px - 50px */
+      width: clamp(2.625rem, 8vw, 3.125rem);
+      height: clamp(2.625rem, 8vw, 3.125rem);
+      background-color: var(--headerColor);
+      border-radius: 50%;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    #contact-568 .cs-social-link:hover {
+      background-color: #4184d3;
+      transform: translateY(-0.25rem);
+    }
+    #contact-568 .cs-icon {
+      width: auto;
+      /* 18px - 24px */
+      height: clamp(1.125rem, 1vw, 1.5rem);
+    }
+
+  
+  }
+  /* Tablet - 650px */
+  @media only screen and (min-width: 40.625rem) {
+    #contact-568 .cs-label {
+      width: 48.6%;
+    }
+    #contact-568 .cs-message {
+      width: 100%;
+    }
+  }
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #contact-568 .cs-container {
+      max-width: 66.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.25rem;
+    }
+    #contact-568 .cs-right {
+      width: 38.6%;
+      max-width: 25.875rem;
+      /* prevent flexbox from squishing it */
+      flex: none;
+    }
+  }
+                                  
