@@ -1,0 +1,399 @@
+
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #001F3F;
+      --primaryLight: #EDB86F;
+      --secondary: #FFBA43;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #banner-310 {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      /* 144px - 252px */
+      padding-top: clamp(9rem, 25vw, 15.75rem);
+      /* 80px - 140px */
+      padding-bottom: clamp(5rem, 13vw, 8.75rem);
+      position: relative;
+      z-index: 1;
+    }
+    #banner-310 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #banner-310 .cs-int-title {
+      /* 39px - 49px */
+      font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: center;
+      max-width: 43.75rem;
+      margin: 0 auto 0.75rem;
+      color: var(--bodyTextColorWhite);
+      position: relative;
+    }
+    #banner-310 .cs-breadcrumbs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #banner-310 .cs-link {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.2em;
+      text-decoration: none;
+      color: var(--bodyTextColorWhite);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+    #banner-310 .cs-link:last-of-type::after {
+      display: none;
+    }
+    #banner-310 .cs-link:after {
+      /* chevron - added as pseudo to make adding and removing them easier */
+      content: '';
+      width: 0.4375rem;
+      height: 0.75rem;
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      background: url("https://csimg.nyc3.digitaloceanspaces.com/Banners/chevron-right.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    #banner-310 .cs-link.cs-active {
+      color: #4184d3;
+    }
+    #banner-310 .cs-background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: -1;
+    }
+    #banner-310 .cs-background:before {
+      /* black overlay box */
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .72;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    #banner-310 .cs-background img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+                                  
+
+
+
+
+
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #176316;
+      --primaryLight: #229521;
+      --secondary: #FFBA43;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #RTsbs-465,
+    #RTsbsr-465,
+    #RTsbst-465 {
+      /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+      font-family: 'Roboto', 'Arial', sans-serif;
+      padding: var(--sectionPadding);
+      /* clips the green box so it doesn't cause overflows */
+      overflow: hidden;
+    }
+    #RTsbs-465 .cs-container,
+    #RTsbsr-465 .cs-container,
+    #RTsbst-465 .cs-container {
+      width: 100%;
+      /* changes to 1280px at 1024px */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #RTsbs-465 .cs-content,
+    #RTsbsr-465 .cs-content,
+    #RTsbst-465 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      max-width: 39.375rem;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+    }
+    #RTsbs-465 .cs-topper,
+    #RTsbsr-465 .cs-topper,
+    #RTsbst-465 .cs-topper {
+      font-size: var(--topperFontSize);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: .1em;
+      font-weight: 700;
+      color: #4184d3;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    #RTsbs-465 .cs-title,
+    #RTsbsr-465 .cs-title,
+    #RTsbst-465 .cs-title {
+      font-size: var(--headerFontSize);
+      font-weight: 900;
+      line-height: 1.2em;
+      text-align: inherit;
+      max-width: 43.75rem;
+      margin: 0 0 1rem 0;
+      color: var(--headerColor);
+      position: relative;
+    }
+    #RTsbs-465 .cs-text,
+    #RTsbsr-465 .cs-text,
+    #RTsbst-465 .cs-text {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      max-width: 40.625rem;
+      margin: 0;
+      color: var(--bodyTextColor);
+    }
+    #RTsbs-465 .cs-text,
+    #RTsbsr-465 .cs-text,
+    #RTsbst-465 .cs-text {
+      /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+      margin-bottom: 1rem;
+    }
+    #RTsbs-465 .cs-text:last-of-type,
+    #RTsbsr-465 .cs-text:last-of-type,
+    #RTsbst-465 .cs-text:last-of-type {
+      margin-bottom: 2rem;
+    }
+    #RTsbs-465 .cs-button-solid,
+    #RTsbsr-465 .cs-button-solid,
+    #RTsbst-465 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color:  #4184d3;
+      border-radius: 0.25rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+    }
+    #RTsbs-465 .cs-button-solid:before,
+    #RTsbsr-465 .cs-button-solid:before,
+    #RTsbst-465 .cs-button-solid:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.25rem;
+      transition: width .3s;
+    }
+    #RTsbs-465 .cs-button-solid:hover:before,
+    #RTsbsr-465 .cs-button-solid:hover:before,
+    #RTsbst-465 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #RTsbs-465 .cs-picture,
+    #RTsbsr-465 .cs-picture,
+    #RTsbst-465 .cs-picture {
+      width: 100%;
+      max-width: 32.625rem;
+      height: auto;
+      /* same margin top as the top value for the :after to offset the amount it overlaps the container */
+      /* 56px - 100px */
+      margin: clamp(3.5rem, 7vw, 6.25rem) 0 0 0;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    #RTsbs-465 .cs-picture:before,
+    #RTsbsr-465 .cs-picture:before,
+    #RTsbst-465 .cs-picture:before {
+      /* green shape */
+      content: '';
+      /* 80px - 164px, changes at 1024px */
+      width: clamp(5rem, 20vw, 10.2rem);
+      height: clamp(5rem, 20vw, 10.2rem);
+      background:  #4184d3;
+      border: clamp(6px, 2vw, 12px) solid #ffffff;
+      border-radius: 2rem 2rem 100% 2rem;
+      opacity: 1;
+      position: absolute;
+      display: block;
+      /* wrapped in a calc function to multiple the clamp value by -1 to get a negative number */
+      bottom: calc(clamp(6px, 2vw, 12px)*-1);
+      right: calc(clamp(6px, 2vw, 12px)*-1);
+      z-index: 10;
+    }
+    #RTsbs-465 .cs-picture:after,
+    #RTsbsr-465 .cs-picture:after,
+    #RTsbst-465 .cs-picture:after {
+      content: '';
+      width: 31.25rem;
+      /* changes at 1024px */
+      height: 70%;
+      border-radius: 2rem;
+      background:  #4184d3;
+      opacity: .16;
+      position: absolute;
+      display: block;
+      /* 56px - 100px */
+      top: calc(clamp(3.5rem, 7vw, 6.25rem)*-1);
+      right: 50%;
+      z-index: -1;
+    }
+    #RTsbs-465 .cs-picture img,
+    #RTsbsr-465 .cs-picture img,
+    #RTsbst-465 .cs-picture img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80%;
+      width: 80%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #RTsbs-465 .cs-container,
+    #RTsbsr-465 .cs-container,
+    #RTsbst-465 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #RTsbs-465 .cs-content,
+    #RTsbsr-465 .cs-content,
+    #RTsbst-465 .cs-content {
+      width: clamp(46.6%, 45.7vw, 51%);
+    }
+    #RTsbs-465 .cs-picture,
+    #RTsbsr-465 .cs-picture,
+    #RTsbst-465 .cs-picture {
+      width: 41%;
+    }
+    #RTsbs-465 .cs-picture:before,
+    #RTsbsr-465 .cs-picture:before,
+    #RTsbst-465 .cs-picture:before {
+      /* 125px - 164px */
+      width: clamp(7.8125rem, 13vw, 10.2rem);
+      height: clamp(7.8215rem, 13vw, 10.2rem);
+      border-radius: 2rem 2rem 50% 2rem;
+      bottom: -2.25rem;
+    }
+    #RTsbs-465 .cs-picture:after,
+    #RTsbsr-465 .cs-picture:after,
+    #RTsbst-465 .cs-picture:after {
+      height: 31.25rem;
+    }
+  }
+  
+  /*-- -------------------------- -->
+  <---   Side By Side Reverse     -->
+  <--- -------------------------- -*/
+  
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #RTsbsr-465 {
+      background-color: #f7f7f7;
+    }
+    #RTsbsr-465 .cs-picture:before {
+      border-radius: 2rem 2rem 2rem 100%;
+      right: auto;
+      left: calc(clamp(6px, 2vw, 12px)*-1);
+    }
+    #RTsbsr-465 .cs-picture:after {
+      left: 50%;
+      right: auto;
+    }
+  }
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #RTsbsr-465 .cs-content {
+      /* sends it to the left side */
+      order: -1;
+    }
+    #RTsbsr-465 .cs-picture:before {
+      border-radius: 2rem 2rem 2rem 50%;
+    }
+  }
+                                  
