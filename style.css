@@ -4,6 +4,7 @@
   font-family: 'Questrial', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /*-- -------------------------- -->
@@ -15,6 +16,109 @@ iframe {
   padding-top: 6rem;
  
 
+
+
+}
+
+.events-title {
+  text-align: center;
+  padding-top: 5rem;
+  font-size: var(--headerFontSize);
+  width: 55%;
+  margin: auto;
+}
+
+.events-title h2 {
+  color: #4184d3;
+}
+
+.event-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background: #fff;
+  padding: 0 35px;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  position: absolute;
+  background: #fff;
+  height: 46px;
+  width: 46px;
+  text-align: center;
+  line-height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transform: translateY(-50%)
+
+}
+
+.wrapper i:first-child {
+  left: -46px;
+}
+
+.wrapper i:last-child {
+  right: -46px;
+}
+
+.wrapper .carousel {
+  white-space: nowrap;
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100%/3)
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(90%/2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+
+  .events-title {
+    text-align: center;
+    padding-top: 5rem;
+    font-size: var(--headerFontSize);
+    width: 70%;
+    margin: auto;
+  }
+  
 }
 
 :root {
@@ -41,8 +145,7 @@ iframe {
       overflow: hidden;
     }
     #cs-navigation {
-      /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: 'Roboto', 'Arial', sans-serif;
+   
       width: 100%;
       padding: 1.25rem 1rem;
       /* prevents padding from affecting height and width */

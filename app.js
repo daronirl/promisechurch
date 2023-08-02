@@ -41,4 +41,69 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
     }
     item.addEventListener('click', onClick)
     }
-                                
+
+
+    const carousel = document.querySelector('.carousel');
+    firstImg = carousel.querySelectorAll('img')[0];
+    const arrowIcons = document.querySelectorAll('.wrapper i');
+
+                
+    arrowIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        })
+    });
+   
+   
+
+
+
+
+    let isDragStart = false, prevPageX, isDragging = false, prevScrollLeft, positionDiff;
+    let firstImgWidth = firstImg.clientWidth + 14;
+
+    const autoSlide = () => {
+
+        if (carousel.scrollLeft === (carousel.scrollWidth - carousel.clientWidth)) return; 
+
+        positionDiff = Math.abs(positionDiff);
+        let firstImgWidth = firstImg.clientWidth + 14;
+        let valDifference = firstImgWidth - positionDiff;
+
+        if (carousel,scrollLeft > prevScrollLeft) {
+                return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+        }
+
+         carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+
+    }
+
+    const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX;
+        prevScrollLeft = carousel.scrollLeft
+    }
+
+
+const dragging = (e) => {
+if (!isDragStart) return;
+    e.preventDefault();
+    carousel.classList.add('dragging');
+    isDragging = true;
+    positionDiff = e.pageX - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+}
+
+    const dragStop = () => {
+        isDragStart = false;
+        carousel.classList.remove('dragging');
+
+        if(!isDragging) return;
+        isDragging = false;
+        autoSlide();
+    }
+
+    carousel.addEventListener('mousedown', dragStart);
+    carousel.addEventListener('mousemove', dragging);
+    carousel.addEventListener('mouseup', dragStop);
+    carousel.addEventListener('mouseleave', dragStop);
