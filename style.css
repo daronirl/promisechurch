@@ -95,7 +95,7 @@ iframe {
 
 .carousel img {
   height: 340px;
-  object-fit: cover;
+  object-fit: contain;
   margin-left: 14px;
   width: calc(100%/3)
 }
